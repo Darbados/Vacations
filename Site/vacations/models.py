@@ -58,14 +58,6 @@ class Vacation(models.Model):
     def __str__(self):
         return self.reason
 
-    @property
-    def display_reason(self):
-        return self.reason.description
-
-    @property
-    def display_rejection_reason(self):
-        return self.rejection_reason.description
-
 
 class VacationReason(DescriptionMixin):
     pass

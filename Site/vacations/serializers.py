@@ -1,14 +1,18 @@
 from rest_framework import serializers
 
-from Site.home import VacationUserSerializer
+from home.serializers import EmployeeSerializer
+
+
+class DescriptionSerializer(serializers.Serializer):
+    description = serializers.CharField()
 
 
 class VacationSerializer(serializers.Serializer):
-    user = VacationUserSerializer()
-    reason = serializers.CharField(source='display_reason')
+    user = EmployeeSerializer()
+    reason = DescriptionSerializer()
     start_date = serializers.DateField()
     end_date = serializers.DateField()
-    confirmed_by = VacationUserSerializer(allow_null=True)
+    confirmed_by = EmployeeSerializer(allow_null=True)
     confirmed_at = serializers.DateTimeField(allow_null=True)
-    rejected_by = VacationUserSerializer(allow_null=True)
-    rejection_reason = serializers.CharField(source='display_rejection_reason')
+    rejected_by = EmployeeSerializer(allow_null=True)
+    rejection_reason = DescriptionSerializer()
