@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from home.serializers import VacationUserSerializer
+from Site.home import VacationUserSerializer
 
 
 class VacationSerializer(serializers.Serializer):

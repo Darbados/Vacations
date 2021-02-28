@@ -1,12 +1,16 @@
-from django.shortcuts import render
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from django.contrib import messages
+from django.http import HttpResponse
+from rest_framework.generics import RetrieveAPIView
 
-from home.models import VacationsUser
-from home.serializers import VacationUserSerializer
+from home.models import Employee
+from home.serializers import EmployeeSerializer
 
 
-class VacationUser(APIView):
-    def get(self, request, user_id):
-        return Response(VacationUserSerializer(VacationsUser.objects.get(pk=user_id)).data)
+def index(request):
+    messages.info(request, 'Index view')
+    return HttpResponse('Hello Vacations app')
 
+
+class EmployeeInfo(RetrieveAPIView):
+    serializer_class = EmployeeSerializer
+    queryset = Employee.objects.filter(deactivated_at__isnull=True)

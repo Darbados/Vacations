@@ -1,7 +1,9 @@
 from rest_framework import serializers
 
+from home.models import Employee
 
-class VacationUserSerializer(serializers.Serializer):
-    email = serializers.EmailField()
-    is_approver = serializers.BooleanField()
-    is_rejector = serializers.BooleanField()
+
+class EmployeeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Employee
+        fields = '__all__'

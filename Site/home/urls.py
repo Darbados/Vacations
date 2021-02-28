@@ -5,5 +5,6 @@ from . import views
 app_name = 'home'
 
 urlpatterns = [
-    path('<int:user_id>/user', views.VacationUser.as_view(), name='user'),
+    path('', views.index, name='index'),
+    path('employee/<int:pk>/details/json', views.EmployeeInfo.as_view(), name='employee_json'),
 ]
