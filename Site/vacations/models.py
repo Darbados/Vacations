@@ -1,10 +1,11 @@
 from django.db import models
 
+from Core.mixins import TimestampMixin
 from home.models import Employee
 from vacations.mixins import DescriptionMixin
 
 
-class Vacation(models.Model):
+class Vacation(TimestampMixin):
     # REASON_PAID_VACATION = 1
     # REASON_UNPAID_VACATION = 2
     # REASON_ILL_VACATION = 3
