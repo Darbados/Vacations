@@ -18,3 +18,5 @@ We should have roles for:
 
 Vacation could allow employee to show a member of the team which will replace him for the vacation period.
 When vacation request is sent, a document for HR could be auto generated and sent to them.
+
+Vacations system should be designed to allow merging vacations data from different sources (API, File imports, etc.).
