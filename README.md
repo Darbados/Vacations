@@ -20,8 +20,3 @@ Vacation could allow employee to show a member of the team which will replace hi
 When vacation request is sent, a document for HR could be auto generated and sent to them.
 
 Vacations system should be designed to allow merging vacations data from different sources (API, File imports, etc.).
-
-
-TODO: 
-- Check django docs for static files manage
-- Check django docs for templates manage
